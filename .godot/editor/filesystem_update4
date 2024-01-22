@@ -1,3 +1,2 @@
-res://Scenes/verticalbar.tscn
-res://Scenes/horizontalbar.tscn
 res://Scripts/Verticalbar.gd
+res://Scenes/verticalbar.tscn
