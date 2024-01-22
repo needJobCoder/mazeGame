@@ -1,2 +1,4 @@
-res://Scripts/Verticalbar.gd
 res://Scenes/verticalbar.tscn
+res://Scripts/gridCells.gd
+res://Scenes/cell.tscn
+res://Scenes/grid.tscn

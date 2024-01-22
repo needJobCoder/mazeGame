@@ -1,6 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705763327
+::res://::1705920600
 icon.svg::CompressedTexture2D::8506389522523610546::1705761516::1705761521::1::::<><>::
-Verticalbar.gd::GDScript::-1::1705763351::0::1::::<>Node2D<>::
-::res://Scenes/::1705763323
-::res://Scripts/::1705763327
+README.md::TextFile::-1::1705768115::0::1::::<><>::
+::res://Scenes/::1705819523
+verticalbar.tscn::PackedScene::6483503772743555666::1705819523::0::1::::<><>::res://Scripts/Verticalbar.gd<>uid://dtgs80quoqera::::res://icon.svg
+::res://Scripts/::1705767506
+Verticalbar.gd::GDScript::-1::1705767506::0::1::::<>Node2D<>::
