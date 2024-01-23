@@ -6,14 +6,18 @@ var cellsMatrix  = []
 var horizontalDistance = 128
 var verticalDistance = 128
 
+	#_assembleCells()
+	#assembleGridPosition()
+	#var row: Array = verticalGetRow(1, cellsMatrix)
+	#var newArr = rightClickRow(row)
+	#cellsMatrix[1] = newArr
+	#print(cellsMatrix)
+
 func _ready():
 	_assembleCells()
-	#print(cellsMatrix)
 	assembleGridPosition()
-	#performOperations()
-	#print(verticalGetRow(1))
-	getColumns()
 	
+
 	
 func _assembleCells():
 	var cells = grid.get_children()
@@ -57,9 +61,9 @@ func performOperations():
 			print(col)
 
 # return row
-func verticalGetRow(row_index: int):
+func verticalGetRow(row_index: int, matrix : Array):
 	var index = 0
-	for row in cellsMatrix:
+	for row in matrix:
 		var getRowToPerformOperations :Array
 		
 		if index == row_index:
@@ -70,10 +74,32 @@ func verticalGetRow(row_index: int):
 		index += 1
 			
 
-func getColumns():
-	for col_index in range(cellsMatrix.size()):
-		for row_index in range(cellsMatrix.size()):
-			var element = cellsMatrix[row_index][col_index]
-			print(element)
-					
+func getTranspose(matrixToBeTransposed: Array) -> Array:
+	var matrix = []
+	var cellsArr = []
+	for col_index in range(matrixToBeTransposed.size()):
+		var i = 1
+		for row_index in range(matrixToBeTransposed.size()):
+			var element = matrixToBeTransposed[row_index][col_index]
+			#print(element)
+			if i % 3 == 0:
+				cellsArr.push_back(element)
+				matrix.push_back(cellsArr)
+				cellsArr = []
+			else:
+				cellsArr.push_back(element)
+			i += 1
+	return matrix
 
+func rightClickRow(cellArr : Array):
+	var top : Node2D = cellArr[0]
+	cellArr.pop_front()
+	cellArr.push_back(top)
+	return 	cellArr
+
+
+func _on_left_0_pressed():
+	var row: Array = verticalGetRow(0, cellsMatrix)
+	var newArr = rightClickRow(row)
+	cellsMatrix[0] = newArr
+	assembleGridPosition()

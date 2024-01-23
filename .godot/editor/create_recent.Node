@@ -1,11 +1,12 @@
+Popup
+TouchScreenButton
 Camera2D
+Control
+CanvasLayer
+Node2D
 CollisionShape2D
 Sprite2D
 StaticBody2D
-Node2D
 Button
-TouchScreenButton
-Control
-CanvasLayer
 CanvasGroup
 Node
