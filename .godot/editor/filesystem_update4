@@ -1,5 +1,4 @@
-res://Scenes/verticalbar.tscn
-res://Scenes/grid.tscn
-res://Scenes/cell.tscn
 res://Scripts/gridCells.gd
 res://Scenes/test.tscn
+res://Scenes/cell.tscn
+res://Scenes/grid.tscn

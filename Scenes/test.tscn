@@ -75,10 +75,19 @@ texture_normal = ExtResource("5_nu4r3")
 position = Vector2(632, 544)
 texture_normal = ExtResource("5_nu4r3")
 
-[node name="Popup" type="Popup" parent="CanvasLayer/Control"]
-
 [node name="Camera2D2" type="Camera2D" parent="."]
 position = Vector2(584, 328)
 zoom = Vector2(0.5, 0.5)
 
 [connection signal="pressed" from="CanvasLayer/Control/left0" to="grid" method="_on_left_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/left1" to="grid" method="_on_left_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/left2" to="grid" method="_on_left_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right0" to="grid" method="_on_right_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right1" to="grid" method="_on_right_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right2" to="grid" method="_on_right_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up0" to="grid" method="_on_up_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up1" to="grid" method="_on_up_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up2" to="grid" method="_on_up_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down0" to="grid" method="_on_down_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down1" to="grid" method="_on_down_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down2" to="grid" method="_on_down_2_pressed"]

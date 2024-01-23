@@ -91,15 +91,104 @@ func getTranspose(matrixToBeTransposed: Array) -> Array:
 			i += 1
 	return matrix
 
-func rightClickRow(cellArr : Array):
+func leftClickRow(cellArr : Array):
 	var top : Node2D = cellArr[0]
 	cellArr.pop_front()
 	cellArr.push_back(top)
+	return 	cellArr
+	
+func rightClickRow(cellArr : Array):
+	var top : Node2D = cellArr[2]
+	cellArr.pop_back()
+	cellArr.push_front(top)
 	return 	cellArr
 
 
 func _on_left_0_pressed():
 	var row: Array = verticalGetRow(0, cellsMatrix)
+	var newArr = leftClickRow(row)
+	cellsMatrix[0] = newArr
+	assembleGridPosition()
+
+
+func _on_left_1_pressed():
+	var row: Array = verticalGetRow(1, cellsMatrix)
+	var newArr = leftClickRow(row)
+	cellsMatrix[1] = newArr
+	assembleGridPosition()
+	
+func _on_left_2_pressed():
+	var row: Array = verticalGetRow(2, cellsMatrix)
+	var newArr = leftClickRow(row)
+	cellsMatrix[2] = newArr
+	assembleGridPosition()
+
+func _on_right_0_pressed():
+	var row: Array = verticalGetRow(0, cellsMatrix)
 	var newArr = rightClickRow(row)
 	cellsMatrix[0] = newArr
+	assembleGridPosition()
+	
+func _on_right_1_pressed():
+	var row: Array = verticalGetRow(1, cellsMatrix)
+	var newArr = rightClickRow(row)
+	cellsMatrix[1] = newArr
+	assembleGridPosition()
+
+func _on_right_2_pressed():
+	var row: Array = verticalGetRow(2, cellsMatrix)
+	var newArr = rightClickRow(row)
+	cellsMatrix[2] = newArr
+	assembleGridPosition()
+	
+func _on_up_0_pressed():
+	var row: Array = verticalGetRow(0, getTranspose(cellsMatrix))
+	var tMatrix = getTranspose(cellsMatrix)
+	var newArr = leftClickRow(row)
+	tMatrix[0] = newArr
+	cellsMatrix = getTranspose(tMatrix)
+	assembleGridPosition()
+	
+func _on_up_1_pressed():
+	var row: Array = verticalGetRow(1, getTranspose(cellsMatrix))
+	var tMatrix = getTranspose(cellsMatrix)
+	var newArr = leftClickRow(row)
+	tMatrix[1] = newArr
+	cellsMatrix = getTranspose(tMatrix)
+	assembleGridPosition()
+
+
+func _on_up_2_pressed():
+	var row: Array = verticalGetRow(2, getTranspose(cellsMatrix))
+	var tMatrix = getTranspose(cellsMatrix)
+	var newArr = leftClickRow(row)
+	tMatrix[2] = newArr
+	cellsMatrix = getTranspose(tMatrix)
+	assembleGridPosition()
+
+
+func _on_down_0_pressed():
+	var row: Array = verticalGetRow(0, getTranspose(cellsMatrix))
+	var tMatrix = getTranspose(cellsMatrix)
+	var newArr = rightClickRow(row)
+	tMatrix[0] = newArr
+	cellsMatrix = getTranspose(tMatrix)
+	assembleGridPosition()
+
+
+func _on_down_1_pressed():
+	var row: Array = verticalGetRow(1, getTranspose(cellsMatrix))
+	var tMatrix = getTranspose(cellsMatrix)
+	var newArr = rightClickRow(row)
+	tMatrix[1] = newArr
+	cellsMatrix = getTranspose(tMatrix)
+	assembleGridPosition()
+
+
+func _on_down_2_pressed():
+	var row: Array = verticalGetRow(2, getTranspose(cellsMatrix))
+	var tMatrix = getTranspose(cellsMatrix)
+	var newArr = rightClickRow(row)
+	tMatrix[2] = newArr
+	cellsMatrix = getTranspose(tMatrix)
 	assembleGridPosition()
